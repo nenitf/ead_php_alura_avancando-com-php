@@ -23,3 +23,5 @@ $contasCorrentes['123.258.852-12'] = [
 foreach ($contasCorrentes as $cpf => $conta) {
     echo $cpf . " -> " . $conta['titular'] . PHP_EOL;
 }
+
+// https://www.php.net/manual/pt_BR/types.comparisons.php
