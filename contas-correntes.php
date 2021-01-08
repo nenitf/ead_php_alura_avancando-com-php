@@ -1,5 +1,9 @@
 <?php
 
+function exibeMensagem($mensagem){
+    echo $mensagem . PHP_EOL;
+}
+
 $contasCorrentes = [
     '123.456.789-10' => [
         'titular' => 'Vinicius',
@@ -15,13 +19,19 @@ $contasCorrentes = [
     ]
 ];
 
-$contasCorrentes['123.258.852-12'] = [
-    'titular' => 'Claudia',
-    'saldo' => 2000
-];
+if (500 > $contasCorrentes['123.456.789-10']['saldo']) {
+    exibeMensagem("Você não pode sacar este valor");
+} else
+    $contasCorrentes['123.456.789-10']['saldo'] -= 500;
+
+
+if (500 > $contasCorrentes['123.456.789-11']['saldo']) {
+    exibeMensagem("Você não pode sacar este valor");
+} else
+    $contasCorrentes['123.456.789-11']['saldo'] -= 500;
 
 foreach ($contasCorrentes as $cpf => $conta) {
-    echo $cpf . " -> " . $conta['titular'] . PHP_EOL;
+    exibeMensagem($cpf . " " . $conta['titular'] . ' ' . $conta['saldo']);
 }
 
 // https://www.php.net/manual/pt_BR/types.comparisons.php
