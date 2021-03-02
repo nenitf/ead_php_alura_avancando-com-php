@@ -17,6 +17,8 @@ $contasCorrentes = [
     ]
 ];
 
+titularComLetrasMaiusculas($contasCorrentes['123.256.789-12']);
+
 
 $contasCorrentes['123.256.789-12'] = depositar(
     $contasCorrentes['123.256.789-12'],

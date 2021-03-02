@@ -25,3 +25,8 @@ function sacar($conta, $valorASacar)
     return $conta;
 }
 
+function titularComLetrasMaiusculas(array &$conta)
+{
+    $conta['titular'] = mb_strtoupper($conta['titular']);
+
+}
